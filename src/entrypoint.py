@@ -34,7 +34,6 @@ REPOSITORY = (
     if GITHUB_EVENT_NAME == "pull_request"
     else INPUT_TARGET_REPOSITORY
 )
-SOURCE_ROOT = os.getenv("INPUT_SOURCE_ROOT", SOURCE_ROOT)
 CURRENT_BRANCH = GITHUB_HEAD_REF or GITHUB_REF.rsplit("/", 1)[-1]
 INPUT_TARGET_BRANCH = os.getenv("INPUT_TARGET_BRANCH", CURRENT_BRANCH)
 INPUT_PULL_REQUEST_BRANCH = os.getenv("INPUT_PULL_REQUEST_BRANCH", GITHUB_BASE_REF)
@@ -47,6 +46,10 @@ BRANCH = (
 
 # Define cppcheck specific vocabulary for switches:
 DISABLED = "disable"
+
+ROOT ="."
+SOURCE_ROOT = os.getenv(SOURCE_ROOT, ROOT )
+
 ENABLED = "enable"
 CHECK_EVERYTHING = "all"
 
