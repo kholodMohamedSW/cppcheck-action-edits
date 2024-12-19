@@ -4,6 +4,10 @@ import os
 import subprocess
 import sys
 
+
+
+ROOT ="."
+SOURCE_ROOT = os.getenv(SOURCE_ROOT, ROOT )
 ENCODING = "utf-8"
 SCA_EXECUTOR = "cppcheck"
 DISPLAY_SCA_VERSION = True
@@ -46,10 +50,6 @@ BRANCH = (
 
 # Define cppcheck specific vocabulary for switches:
 DISABLED = "disable"
-
-ROOT ="."
-SOURCE_ROOT = os.getenv(SOURCE_ROOT, ROOT )
-
 ENABLED = "enable"
 CHECK_EVERYTHING = "all"
 
