@@ -7,12 +7,15 @@ import sys
 
 
 ROOT ="."
-SOURCE_ROOT = os.getenv(SOURCE_ROOT, ROOT )
+SOURCE_ROOT = "."
 ENCODING = "utf-8"
 SCA_EXECUTOR = "cppcheck"
 DISPLAY_SCA_VERSION = True
 DISPLAY_SCA_HELP = True
 # SOURCE_ROOT = "."
+
+SOURCE_ROOT = os.getenv(SOURCE_ROOT, ROOT )
+
 
 # The following environment reads will fail execution if variables not set:
 GITHUB_EVENT_NAME = os.environ["GITHUB_EVENT_NAME"]
