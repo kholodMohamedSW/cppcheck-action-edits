@@ -8,7 +8,7 @@ ENCODING = "utf-8"
 SCA_EXECUTOR = "cppcheck"
 DISPLAY_SCA_VERSION = True
 DISPLAY_SCA_HELP = True
-SOURCE_ROOT = "."
+# SOURCE_ROOT = "."
 
 # The following environment reads will fail execution if variables not set:
 GITHUB_EVENT_NAME = os.environ["GITHUB_EVENT_NAME"]
@@ -34,7 +34,7 @@ REPOSITORY = (
     if GITHUB_EVENT_NAME == "pull_request"
     else INPUT_TARGET_REPOSITORY
 )
-
+SOURCE_ROOT = os.getenv("INPUT_SOURCE_ROOT", SOURCE_ROOT)
 CURRENT_BRANCH = GITHUB_HEAD_REF or GITHUB_REF.rsplit("/", 1)[-1]
 INPUT_TARGET_BRANCH = os.getenv("INPUT_TARGET_BRANCH", CURRENT_BRANCH)
 INPUT_PULL_REQUEST_BRANCH = os.getenv("INPUT_PULL_REQUEST_BRANCH", GITHUB_BASE_REF)
