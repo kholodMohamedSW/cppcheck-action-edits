@@ -22,6 +22,11 @@ inputs:
     default: "disable"
     required: false
 
+  source_root:
+    description: "select code directory to check"
+    default: "."
+    required: false
+
   skip_preprocessor:
     description: "Print preprocessor output on stdout and don't do any further processing."
     default: "disable"
