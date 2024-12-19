@@ -197,7 +197,7 @@ def display_sca_executor_help():
     return subprocess.run((SCA_EXECUTOR, "--help"), capture_output=True, check=False)
 
 
-def run(vector, where=SOURCE_ROOT, show_version=False, show_help=False):
+def run(vector, where= SOURCE_ROOT, show_version=False, show_help=False):
     """Execute the command in a sub process."""
     if show_version:
         print("retrieving cppcheck version")
